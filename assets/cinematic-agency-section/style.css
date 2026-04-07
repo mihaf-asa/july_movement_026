@@ -1,0 +1,287 @@
+:root {
+    --bg-color: #111;
+    --text-color: #ffffff;
+    --accent-color: rgba(255, 255, 255, 0.1);
+    --grid-color: rgba(255, 255, 255, 0.03);
+    --transition-speed: 0.8s;
+    --font-main: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}
+
+/* Cinematic Section Container */
+.cinematic-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10vh 5vw;
+}
+
+/* Background Core */
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: var(--bg-color);
+}
+
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity var(--transition-speed) ease-in-out;
+    opacity: 0;
+}
+
+.bg-1 { background-image: url('../assets/img/69709ebc2069a4d9e775207e_brand-direction.webp'); }
+.bg-2 { background-image: url('../assets/img/69709ebb8da6f8509660cb20_advanced-tech.webp'); }
+.bg-3 { background-image: url('../assets/img/69709ebcc95cafc656860fed_performance-marketing.webp'); }
+.bg-4 { background-image: url('../assets/img/69709ebc9eb980137b6c410a_system-integration.webp'); }
+
+/* Interaction States for each card */
+.cinematic-section.hover-1 .bg-1 { opacity: 1; }
+.cinematic-section.hover-2 .bg-2 { opacity: 1; }
+.cinematic-section.hover-3 .bg-3 { opacity: 1; }
+.cinematic-section.hover-4 .bg-4 { opacity: 1; }
+
+/* Technical Overlays */
+.overlay-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px);
+    background-size: 25% 100%; /* Represents 4 columns */
+    z-index: 3;
+    pointer-events: none;
+}
+
+.overlay-vignette {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 1) 0%, 
+        rgba(0, 0, 0, 0.8) 15%, 
+        transparent 45%, 
+        transparent 55%, 
+        rgba(0, 0, 0, 0.8) 85%, 
+        rgba(0, 0, 0, 1) 100%);
+}
+
+/* Header/Nav Styles */
+.section-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.status-marker {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+}
+
+.status-marker span {
+    width: 6px;
+    height: 6px;
+    background-color: #00ff88;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px #00ff88;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+.est-tag {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    opacity: 0.8;
+}
+
+/* Service Grid */
+.services-container {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    border-top: 1px solid var(--grid-color);
+}
+
+.service-card {
+    position: relative;
+    padding: 60px 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    border-left: 1px solid var(--grid-color);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-card:last-child {
+    border-right: 1px solid var(--grid-color);
+}
+
+.service-card .card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-tag {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 20px;
+    opacity: 0.4;
+    transition: opacity 0.5s ease;
+}
+
+.card-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    transition: transform 0.5s ease;
+}
+
+.card-desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    opacity: 0.6;
+    max-width: 80%;
+    transition: opacity 0.5s ease;
+}
+
+/* Glassmorphism & Micro-animations */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.02), transparent);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card:hover .card-tag {
+    opacity: 1;
+}
+
+.service-card:hover .card-title {
+    transform: translateY(-5px);
+}
+
+.service-card:hover .card-desc {
+    opacity: 1;
+}
+
+/* Spotlight Effect */
+.card-spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.08) 0%, transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.service-card:hover .card-spotlight {
+    opacity: 1;
+}
+
+/* Footer Accent */
+.section-footer {
+    position: relative;
+    z-index: 5;
+    padding-top: 40px;
+    border-top: 1px solid var(--grid-color);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.scroll-hint {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .service-card {
+        border-bottom: 1px solid var(--grid-color);
+    }
+}
+
+@media (max-width: 640px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+    .card-title {
+        font-size: 1.8rem;
+    }
+    .cinematic-section {
+        padding: 15vh 5vw 5vh;
+    }
+}

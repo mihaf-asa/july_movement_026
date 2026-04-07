@@ -1,0 +1,626 @@
+@media (min-width:992px) {
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="80fc556d-7751-0e7e-947e-d3c2e848ef1c"] {
+                -webkit-transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -moz-transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -ms-transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="80fc556d-7751-0e7e-947e-d3c2e848ef17"] {
+                color: rgb(255, 255, 255);
+                width: 100%;
+            }
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="80fc556d-7751-0e7e-947e-d3c2e848ef1f"] {
+                -webkit-transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -moz-transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -ms-transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                transform: translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+        }
+
+/* COOKIEBOT -- Hide banner during loader */
+
+        #CybotCookiebotDialog {
+            display: none !important;
+        }
+
+        .mini-showreel {
+            opacity: 0;
+            will-change: opacity;
+        }
+
+/* Hide elements from Webflow editor */
+
+            /* loader */
+
+            .wf-design-mode .loader {
+                display: none;
+            }
+
+            /* case history magnetic bar */
+
+            .wf-design-mode .magnetic__row {
+                display: none;
+            }
+
+/* ------------------------- Scaling System by Osmo [https://osmo.supply/] -------------------------  */
+
+                html {
+                    -webkit-font-smoothing: antialiased;
+                    text-rendering: optimizeLegibility;
+                    font-variant-ligatures: contextual common-ligatures;
+                    font-feature-settings: "kern", "liga", "clig", "calt";
+                }
+
+                /* ------------------------- Reset -------------------------------------------------- */
+
+                *,
+                *:after,
+                *:before {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                }
+
+                html {
+                    scroll-behavior: initial;
+                }
+
+                svg {
+                    max-width: none;
+                    height: auto;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+                }
+
+                a {
+                    color: inherit;
+                }
+
+                /* ------------------------- Hide Scrollbar -------------------------------------------------- */
+
+                body {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+
+                body::-webkit-scrollbar {
+                    width: 0;
+                    height: 0;
+                }
+
+                /* Stili base per Split delle heading */
+
+                /*
+[data-split] {
+  white-space: normal;
+}
+*/
+
+                [data-split="heading"],
+                [data-load-text] {
+                    opacity: 0;
+                    visibility: hidden;
+                    will-change: transform;
+                }
+
+                [data-split="heading"] {
+                    white-space: normal;
+                }
+
+                #CookiebotWidget {
+                    display: none !important;
+                }
+
+                /* FILTERING SYSTEM (Projects / Blog) */
+
+                /* -- All filters buttons (Category, All, Reset) */
+
+                [data-filter-target] {
+                    cursor: pointer;
+                    transition: opacity 0.3s ease, visibility 0.3s ease;
+                }
+
+                [data-filter-target]:not([data-filter-target="reset"]) {
+                    opacity: 0.4;
+                }
+
+                [data-filter-status="active"] {
+                    opacity: 1 !important;
+                    /* required for specificity on category filters */
+                    visibility: visible;
+                    transform: scale(1);
+                    /*  display: block;  */
+                }
+
+                /* -- same as .sb__item */
+
+                [data-filter-name] {
+                    opacity: 1;
+                    transition: opacity 300ms ease, transform 300ms ease;
+                    /* Durata uguale al JS */
+                    /* display: block; */
+                }
+
+                .sb__item[data-filter-status="active"] {
+                    opacity: 1;
+                    visibility: visible;
+                    /* display: block; */
+                }
+
+                .sb__item[data-filter-status="not-active"] {
+                    opacity: 0;
+                    visibility: hidden;
+                    /* display: none; */
+                }
+
+                /* .sb__item filtered out */
+
+                [data-filter-status="not-active"]:not(.filter-btn) {
+                    opacity: 0;
+                    visibility: hidden;
+                    /* display: none; */
+                }
+
+                /* sb__item animating */
+
+                [data-filter-status="transition-out"] {
+                    opacity: 0;
+                    visibility: visible;
+                    transform: scale(0.95);
+                    transition: opacity 300ms ease, transform 300ms ease;
+                    pointer-events: none;
+                    /* display: block;  */
+                }
+
+                /* END FILTERING SYSTEM */
+
+                /* PROJECTS / BLOG - hide comma on last filter button */
+
+                .projects__filter-item:last-child .pf__comma {
+                    visibility: hidden;
+                }
+
+                [data-filter-target][data-count=""]::after {
+                    opacity: 0;
+                }
+
+                /* counter -- projects */
+
+                [data-filter-target]::after {
+                    position: absolute;
+                    content: attr(data-count);
+                    font-size: 10px;
+                    font-weight: 500;
+                    vertical-align: super;
+                    opacity: 1;
+                    transition: opacity .3s ease;
+                    /* visibility: hidden; */
+                }
+
+                /* WEBFLOW EDITOR */
+
+                /* Show in Webflow editor Elements that are hidden in frontend */
+
+                .wf-design-mode [data-split="heading"],
+                .wf-design-mode .reset-btn,
+                .wf-design-mode .projects__filter-item:last-child .pf__comma {
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+/* Hover styling */
+@media (hover: hover) {
+  .copy-email-button:hover .copy-email-icon__wrap{
+    background: rgba(139, 0, 0, 0.9);
+  }
+  .copy-email-button:hover .copy-email-text__el{
+    transform: translate(0px, -100%);
+  }
+}
+
+/* Keyboard focus styling */
+.copy-email-button:focus .copy-email-icon__wrap{
+  background: rgba(139, 0, 0, 0.9);
+}
+.copy-email-button:focus .copy-email-text__el {
+  transform: translate(0px, -100%);
+}
+
+/* 'Copied' state, when a user has clicked the button */
+[data-copy-button="copied"] .copy-email-icon__wrap{ background: #ff3b3b !important; }
+[data-copy-button="copied"] .copy-email-text__el{ transform: translate(0px, -200%) !important; }
+
+@media screen and (min-width: 768px) {
+                            .nav__wrapper {
+                                display: grid;
+                                grid-template-columns: repeat(48, minmax(0, 1fr));
+                            }
+                            /* Tutte le colonne sulla stessa riga */
+                            .nav__wrapper>.nav__column {
+                                grid-row: 1;
+                            }
+                        }
+
+/* Stile base per il nome del dot */
+
+                                            .slider__dot-name {
+                                                opacity: 0.5;
+                                                transition: opacity 0.3s ease;
+                                                /* Transizione morbida */
+                                                cursor: pointer;
+                                                /* Opzionale, se sono cliccabili */
+                                            }
+
+                                            /* Quando è attivo */
+
+                                            .slider__dot-name.is-active {
+                                                opacity: 1;
+                                            }
+
+/* --- STILE BASE (Comune) --- */
+
+                                    .ss__image,
+                                    .bottom-cta__tag {
+                                        opacity: 0;
+                                        visibility: hidden;
+                                        transition: all 0.3s ease;
+                                    }
+
+                                    /* Quando attivi (via JS), diventano visibili */
+
+                                    .ss__image.is-visible,
+                                    .bottom-cta__tag.is-visible {
+                                        opacity: 1;
+                                        visibility: visible;
+                                    }
+
+                                    .ss__bottom-cta {
+                                        transition: opacity 0.3s ease;
+                                        cursor: pointer;
+                                    }
+
+                                    /* La lista interna di base è nascosta o opaca */
+
+                                    .bottom__cta-list {
+                                        opacity: 0;
+                                        /* O il valore di default che preferisci */
+                                        transition: opacity 0.3s ease;
+                                    }
+
+                                    /* --- VERSIONE DESKTOP (sopra 768px) --- */
+
+                                    @media (min-width: 769px) {
+                                        /* Logica "Spotlight": 
+     1. Quando passo sopra il CONTENITORE PADRE, porto TUTTI i cta a opacità 0.4 */
+                                        .ss__cta-container:hover .ss__bottom-cta {
+                                            opacity: 0.4;
+                                        }
+                                        /* 2. Ma il singolo CTA su cui sono in HOVER torna a opacità 1 */
+                                        .ss__cta-container .ss__bottom-cta:hover {
+                                            opacity: 1;
+                                        }
+                                        /* Gestione hover figli desktop */
+                                        .ss__bottom-cta:hover .bottom__cta-list {
+                                            opacity: 0.65;
+                                            visibility: visible;
+                                        }
+                                        .ss__bottom-cta:hover .bottom-cta__tag {
+                                            opacity: 1;
+                                            visibility: visible;
+                                        }
+                                    }
+
+                                    /* --- VERSIONE MOBILE (sotto 768px) --- */
+
+                                    @media (max-width: 768px) {
+                                        /* Quando un CTA ha la classe .is-active (aggiunta via JS) */
+                                        .ss__bottom-cta.is-active .bottom__cta-list {
+                                            opacity: 1 !important;
+                                            /* Forza opacità 100% come richiesto */
+                                            visibility: visible;
+                                        }
+                                        /* Opzionale: Evidenziare il titolo del cta attivo su mobile */
+                                        .ss__bottom-cta.is-active {
+                                            opacity: 1;
+                                        }
+                                        /* Opzionale: Sbiadire leggermente quelli non attivi su mobile? 
+     Se non lo vuoi, rimuovi questa regola */
+                                        .ss__bottom-cta:not(.is-active) {
+                                            opacity: 0.6;
+                                        }
+                                    }
+
+/* Animate Accordion Bottom Grid */
+
+                                .accordion-css__item-bottom {
+                                    transition: grid-template-rows 0.6s cubic-bezier(0.625, 0.05, 0, 1);
+                                }
+
+                                [data-accordion-status="active"] .accordion-css__item-bottom {
+                                    grid-template-rows: 1fr;
+                                }
+
+                                /* Animate Icon */
+
+                                .accordion-css__item-icon {
+                                    transition: transform 0.6s cubic-bezier(0.625, 0.05, 0, 1);
+                                }
+
+                                [data-accordion-status="active"] .accordion-css__item-icon {
+                                    transform: rotate(0.001deg);
+                                }
+
+.mini-showreel__play {
+                                color: white;
+                                background-color: transparent;
+                                transition: color 0.3s ease, background-color 0.3s ease;
+                            }
+
+                            .mini-showreel:hover .mini-showreel__play {
+                                background-color: white;
+                                color: black;
+                                /* Ripetiamo la transition qui per sicurezza se hai altri stili che interferiscono */
+                                transition: color 0.3s ease, background-color 0.3s ease;
+                            }
+
+                            .frame.is--mid {
+                                color: white;
+                                transform: scale(1);
+                                transition: color 0.3s ease, transform 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+                            }
+
+                            .mini-showreel:hover .frame.is--mid {
+                                color: #ff3b3b;
+                                transform: scale(0.7);
+                            }
+
+.mini-showreel__media {
+                        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+                        backface-visibility: hidden;
+                        -webkit-backface-visibility: hidden;
+                        transform: translateZ(0);
+                    }
+
+                    [data-mini-showreel-status="active"] .mini-showreel__click {
+                        display: none;
+                    }
+
+                    [data-mini-showreel-status] .mini-showreel__info {
+                        transition: margin 1s cubic-bezier(0.87, 0, 0.13, 1);
+                    }
+
+                    [data-mini-showreel-status="active"] .mini-showreel__info {
+                        margin-top: -2.75em;
+                    }
+
+                    [data-mini-showreel-status] .mini-showreel__card {
+                        transition: margin 1s cubic-bezier(0.87, 0, 0.13, 1);
+                    }
+
+                    [data-mini-showreel-status="active"] .mini-showreel__card {
+                        margin-top: 1.375em;
+                        margin-bottom: 1.375em;
+                    }
+
+                    [data-mini-showreel-status] .mini__frames,
+                    [data-mini-showreel-status] .mini__tags,
+                    [data-mini-showreel-status] .mini-showreel__play {
+                        transition: opacity 0.3s cubic-bezier(0.87, 0, 0.13, 1), transform 0.3s cubic-bezier(0.87, 0, 0.13, 1), visibility 0.3s;
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0);
+                    }
+
+                    [data-mini-showreel-status="active"] .mini__frames,
+                    [data-mini-showreel-status="active"] .mini__tags,
+                    [data-mini-showreel-status="active"] .mini-showreel__play {
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(10px);
+                        pointer-events: none;
+                    }
+
+                    [data-mini-showreel-status] .mini-showreel-lightbox__dark {
+                        transition: all 1s cubic-bezier(0.87, 0, 0.13, 1);
+                    }
+
+                    [data-mini-showreel-status="active"] .mini-showreel-lightbox__dark {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    [data-mini-showreel-status="not-active"] [data-bunny-player-init][data-player-status] .bunny-player__placeholder {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    [data-mini-showreel-status="not-active"] [data-bunny-player-init][data-player-status] .bunny-player__dark {
+                        opacity: 0;
+                    }
+
+                    [data-mini-showreel-status="not-active"] [data-bunny-player-init] .bunny-player__playpause {
+                        opacity: 0;
+                    }
+
+                    [data-mini-showreel-status="not-active"] [data-bunny-player-init] .bunny-player__interface {
+                        opacity: 0;
+                        transform: translateY(1em) rotate(0.001deg);
+                    }
+
+/* Animation */
+
+                    [data-bunny-player-init] :is(.bunny-player__placeholder, .bunny-player__dark, .bunny-player__playpause, .bunny-player__loading) {
+                        transition: opacity 0.3s linear, visibility 0.3s linear;
+                    }
+
+                    /* Placeholder */
+
+                    [data-bunny-player-init][data-player-status="playing"] .bunny-player__placeholder,
+                    [data-bunny-player-init][data-player-status="paused"] .bunny-player__placeholder,
+                    [data-bunny-player-init][data-player-activated="true"][data-player-status="ready"] .bunny-player__placeholder {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    /* Dark Overlay */
+
+                    [data-bunny-player-init][data-player-status="paused"] .bunny-player__dark,
+                    [data-bunny-player-init][data-player-status="playing"][data-player-hover="active"] .bunny-player__dark {
+                        opacity: 0.3;
+                    }
+
+                    [data-bunny-player-init][data-player-status="playing"] .bunny-player__dark {
+                        opacity: 0;
+                    }
+
+                    /* Play/Pause */
+
+                    [data-bunny-player-init][data-player-status="playing"] .bunny-player__playpause,
+                    [data-bunny-player-init][data-player-status="loading"] .bunny-player__playpause {
+                        opacity: 0;
+                    }
+
+                    [data-bunny-player-init][data-player-status="playing"][data-player-hover="active"] .bunny-player__playpause {
+                        opacity: 1;
+                    }
+
+                    [data-bunny-player-init][data-player-status="playing"] .bunny-player__play-svg,
+                    [data-bunny-player-init][data-player-status="loading"] .bunny-player__play-svg {
+                        display: none;
+                    }
+
+                    [data-bunny-player-init][data-player-status="playing"] .bunny-player__pause-svg,
+                    [data-bunny-player-init][data-player-status="loading"] .bunny-player__pause-svg {
+                        display: block;
+                    }
+
+                    /* Loading */
+
+                    [data-bunny-player-init][data-player-status="loading"] .bunny-player__loading {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    /* Interface */
+
+                    .bunny-player__interface {
+                        transition: all 0.6s cubic-bezier(0.625, 0.05, 0, 1);
+                    }
+
+                    [data-bunny-player-init][data-player-status="playing"] .bunny-player__interface,
+                    [data-bunny-player-init][data-player-status="loading"] .bunny-player__interface {
+                        opacity: 0;
+                        transform: translateY(1em) rotate(0.001deg);
+                    }
+
+                    [data-bunny-player-init][data-player-status="playing"][data-player-hover="active"] .bunny-player__interface,
+                    [data-bunny-player-init][data-player-status="loading"][data-player-hover="active"] .bunny-player__interface {
+                        opacity: 1;
+                        transform: translateY(0em) rotate(0.001deg);
+                    }
+
+                    /* Timeline */
+
+                    [data-bunny-player-init][data-player-status="idle"][data-player-activated="false"] .bunny-player__timeline,
+                    [data-bunny-player-init][data-player-status="ready"][data-player-activated="false"] .bunny-player__timeline {
+                        pointer-events: none;
+                    }
+
+                    /* Timeline Handle */
+
+                    [data-bunny-player-init] .bunny-player__timeline-handle {
+                        transition: transform 0.15s ease-in-out;
+                    }
+
+                    [data-bunny-player-init][data-timeline-drag="true"] .bunny-player__timeline-handle {
+                        transform: translate(-50%, -50%) scale(1);
+                    }
+
+                    /* Fullscreen */
+
+                    [data-bunny-player-init][data-player-fullscreen="true"] .bunny-player__fullscreen-shrink-svg {
+                        display: block;
+                    }
+
+                    [data-bunny-player-init][data-player-fullscreen="true"] .bunny-player__fullscreen-scale-svg {
+                        display: none;
+                    }
+
+                    /* Mute */
+
+                    [data-bunny-player-init][data-player-muted="true"] .bunny-player__volume-mute-svg {
+                        display: block;
+                    }
+
+                    [data-bunny-player-init][data-player-muted="true"] .bunny-player__volume-up-svg {
+                        display: none;
+                    }
+
+                    /* Cover Mode */
+
+                    [data-bunny-player-init][data-player-update-size="cover"] {
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                    }
+
+                    [data-bunny-player-init][data-player-update-size="cover"] [data-player-before] {
+                        display: none;
+                    }
+
+                    [data-bunny-player-init][data-player-update-size="cover"][data-player-fullscreen="false"] .bunny-player__video {
+                        object-fit: cover;
+                    }
+
+[data-underline-link] {
+                                                            text-decoration: none;
+                                                            position: relative;
+                                                        }
+
+                                                        [data-underline-link]::before,
+                                                        [data-underline-link="alt"]::before,
+                                                        [data-underline-link="alt"]::after {
+                                                            content: "";
+                                                            position: absolute;
+                                                            bottom: -0.0625em;
+                                                            left: 0;
+                                                            width: 100%;
+                                                            height: 0.0625em;
+                                                            background-color: currentColor;
+                                                            transition: transform 0.735s cubic-bezier(0.625, 0.05, 0, 1);
+                                                            transform-origin: right;
+                                                            transform: scaleX(0) rotate(0.001deg);
+                                                        }
+
+                                                        [data-underline-link="alt"]::before {
+                                                            transform-origin: left;
+                                                            transform: scaleX(1) rotate(0.001deg);
+                                                            transition-delay: 0.3s;
+                                                        }
+
+                                                        [data-underline-link="alt"]::after {
+                                                            transform-origin: right;
+                                                            transform: scaleX(0) rotate(0.001deg);
+                                                            transition-delay: 0s;
+                                                        }
+
+                                                        @media (hover: hover) and (pointer: fine) {
+                                                            [data-hover]:hover [data-underline-link]::before,
+                                                            [data-underline-link]:hover::before {
+                                                                transform-origin: left;
+                                                                transform: scaleX(1) rotate(0.001deg);
+                                                            }
+                                                            [data-hover]:hover [data-underline-link="alt"]::before,
+                                                            [data-underline-link="alt"]:hover::before {
+                                                                transform-origin: right;
+                                                                transform: scaleX(0) rotate(0.001deg);
+                                                                transition-delay: 0s;
+                                                            }
+                                                            [data-hover]:hover [data-underline-link="alt"]::after,
+                                                            [data-underline-link="alt"]:hover::after {
+                                                                transform-origin: left;
+                                                                transform: scaleX(1) rotate(0.001deg);
+                                                                transition-delay: 0.3s;
+                                                            }
+                                                        }

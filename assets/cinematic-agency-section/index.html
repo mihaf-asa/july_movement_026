@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Agency Section | Evolve Demo</title>
+    <meta name="description" content="Premium immersive web section with interactive background cross-fade and technical grid system.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <main class="cinematic-section" id="agency-section">
+        <!-- Background Layers (1 per service card) -->
+        <div class="background-wrapper">
+            <div class="bg-layer bg-1" id="bg-1"></div>
+            <div class="bg-layer bg-2" id="bg-2"></div>
+            <div class="bg-layer bg-3" id="bg-3"></div>
+            <div class="bg-layer bg-4" id="bg-4"></div>
+            <!-- Technical UI Overlays -->
+            <div class="overlay-grid"></div>
+            <div class="overlay-vignette"></div>
+        </div>
+
+        <!-- Site Header / Nav Hint -->
+        <header class="section-header">
+            <div class="status-marker"><span></span> System Active</div>
+            <div class="est-tag">Est. 2008©</div>
+        </header>
+
+        <!-- Service Cards Grid -->
+        <div class="services-container">
+            <div class="service-card" data-index="1">
+                <div class="card-content">
+                    <span class="card-tag">(a.)</span>
+                    <h2 class="card-title">Brand Direction</h2>
+                    <p class="card-desc">Strategic identity and digital storytelling for high-end eCommerce brands.</p>
+                </div>
+                <div class="card-spotlight"></div>
+            </div>
+
+            <div class="service-card" data-index="2">
+                <div class="card-content">
+                    <span class="card-tag">(b.)</span>
+                    <h2 class="card-title">Advanced Tech</h2>
+                    <p class="card-desc">Custom Shopify Plus architecture and seamless system integrations.</p>
+                </div>
+                <div class="card-spotlight"></div>
+            </div>
+
+            <div class="service-card" data-index="3">
+                <div class="card-content">
+                    <span class="card-tag">(c.)</span>
+                    <h2 class="card-title">Performance Marketing</h2>
+                    <p class="card-desc">Data-driven growth strategies and automated customer acquisition flows.</p>
+                </div>
+                <div class="card-spotlight"></div>
+            </div>
+
+            <div class="service-card" data-index="4">
+                <div class="card-content">
+                    <span class="card-tag">(d.)</span>
+                    <h2 class="card-title">System Integration</h2>
+                    <p class="card-desc">Bridging the gap between front-end experiences and global backend logic.</p>
+                </div>
+                <div class="card-spotlight"></div>
+            </div>
+        </div>
+
+        <!-- Footer Accent -->
+        <footer class="section-footer">
+            <p class="scroll-hint">Hover to explore logic</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
